@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://dbir3s072c0t7"]
+
+[ext_resource type="PackedScene" uid="uid://bg43d2ning62t" path="res://Scene/UI/chest_item.tscn" id="1_cgdg0"]
+[ext_resource type="Script" uid="uid://b2vhknaolots2" path="res://Scene/UI/chest_reward.gd" id="1_e86j2"]
+[ext_resource type="Script" uid="uid://c5lipkh4axo22" path="res://custom_resource/item.gd" id="2_qp7b8"]
+[ext_resource type="Resource" uid="uid://tmhwbi35q4eo" path="res://Item/gold_cup.tres" id="3_3xbwd"]
+[ext_resource type="Resource" uid="uid://3t10ii0fkgow" path="res://Item/bronze_cup.tres" id="3_hg2kk"]
+[ext_resource type="Resource" uid="uid://b1v3u38f0us6i" path="res://Item/bronze_sword.tres" id="4_7xrfk"]
+[ext_resource type="Resource" uid="uid://ey0n61iit0mm" path="res://Item/gold_sword.tres" id="4_hqxnb"]
+[ext_resource type="Resource" uid="uid://dop0y47opdsxw" path="res://Item/silver_sword.tres" id="5_hg2kk"]
+[ext_resource type="Resource" uid="uid://brwapdtw14ckc" path="res://Item/sliver_cup.tres" id="8_20n38"]
+
+[node name="Chest_reward" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e86j2")
+chest_rewards = Array[ExtResource("2_qp7b8")]([ExtResource("3_hg2kk"), ExtResource("4_7xrfk"), ExtResource("3_3xbwd"), ExtResource("4_hqxnb"), ExtResource("5_hg2kk"), ExtResource("8_20n38")])
+
+[node name="TextureRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0177324, 0.0177324, 0.0177324, 0.541176)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -37.5
+offset_right = 139.0
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Items" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="ChestItem" parent="VBoxContainer/Items" instance=ExtResource("1_cgdg0")]
+layout_mode = 2
+
+[node name="ChestItem2" parent="VBoxContainer/Items" instance=ExtResource("1_cgdg0")]
+layout_mode = 2
+
+[node name="ChestItem3" parent="VBoxContainer/Items" instance=ExtResource("1_cgdg0")]
+layout_mode = 2
+
+[node name="SkipButton" type="Button" parent="."]
+custom_minimum_size = Vector2(50, 30)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.5
+offset_top = -65.0
+offset_right = 20.5
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Skip"

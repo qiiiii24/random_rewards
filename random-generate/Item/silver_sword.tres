@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://dop0y47opdsxw"]
+
+[ext_resource type="Texture2D" uid="uid://b4x13g7w4speu" path="res://Assets/item/weapons/sliver_sword.tres" id="1_7blnj"]
+[ext_resource type="Script" uid="uid://c5lipkh4axo22" path="res://custom_resource/item.gd" id="2_coflk"]
+
+[resource]
+script = ExtResource("2_coflk")
+icon = ExtResource("1_7blnj")
+name = "Sliver Sword"
+rarity = 1
+metadata/_custom_type_script = "uid://c5lipkh4axo22"

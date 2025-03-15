@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmpo8ma2im1aw"]
+
+[ext_resource type="Texture2D" uid="uid://b8gg15uboind1" path="res://Assets/Fantasy RPG (Toony) 32x32.png" id="1_if2wm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw8v6"]
+atlas = ExtResource("1_if2wm")
+region = Rect2(1.47981, 1.47239, 30.5202, 126.528)
+
+[sub_resource type="Animation" id="Animation_oialx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_imxax"]
+resource_name = "open"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n3nte"]
+_data = {
+&"RESET": SubResource("Animation_oialx"),
+&"open": SubResource("Animation_imxax")
+}
+
+[node name="Chest" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_gw8v6")
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_n3nte")
+}

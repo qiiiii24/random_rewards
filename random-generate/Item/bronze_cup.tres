@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://3t10ii0fkgow"]
+
+[ext_resource type="Texture2D" uid="uid://chu2ogagv7qps" path="res://Assets/item/consumables/bronze_cup.tres" id="1_hcb4b"]
+[ext_resource type="Script" uid="uid://c5lipkh4axo22" path="res://custom_resource/item.gd" id="1_rn65w"]
+
+[resource]
+script = ExtResource("1_rn65w")
+icon = ExtResource("1_hcb4b")
+name = "Bronze Cup"
+rarity = 0
+metadata/_custom_type_script = "uid://c5lipkh4axo22"

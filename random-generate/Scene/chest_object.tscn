@@ -1,0 +1,100 @@
+[gd_scene load_steps=21 format=3 uid="uid://c5wxpaejgsbte"]
+
+[ext_resource type="Texture2D" uid="uid://dmje288f1f6hr" path="res://Assets/chest/Chest.png" id="1_dm4f4"]
+[ext_resource type="Texture2D" uid="uid://dqm4t1uid4q01" path="res://Assets/chest/Gold/Open(GoldLoot)1.png" id="3_s30c5"]
+[ext_resource type="Texture2D" uid="uid://c73d3i2kultxg" path="res://Assets/chest/Gold/Open(GoldLoot)2.png" id="4_l6jrm"]
+[ext_resource type="Texture2D" uid="uid://c25pmu8ty18y3" path="res://Assets/chest/Gold/Open(GoldLoot)3.png" id="5_6qrrm"]
+[ext_resource type="Texture2D" uid="uid://bbv2wf07hkesm" path="res://Assets/chest/Gold/Open(GoldLoot)4.png" id="6_1e46p"]
+[ext_resource type="Texture2D" uid="uid://c1uslpcxl11f4" path="res://Assets/chest/Gold/Open(GoldLoot)5.png" id="7_7w21o"]
+[ext_resource type="Texture2D" uid="uid://68im51jt63s4" path="res://Assets/chest/Gold/Open(GoldLoot)6.png" id="8_r6m8o"]
+[ext_resource type="Texture2D" uid="uid://b1730u6xcll10" path="res://Assets/chest/Gold/Open(GoldLoot)7.png" id="9_xjk1r"]
+[ext_resource type="Texture2D" uid="uid://chwn56nt4ipfp" path="res://Assets/chest/Gold/Open(GoldLoot)8.png" id="10_qjrxt"]
+[ext_resource type="Texture2D" uid="uid://0w4b1odmwcas" path="res://Assets/chest/Gold/Open(GoldLoot)9.png" id="11_rr0cs"]
+[ext_resource type="Texture2D" uid="uid://lmlr8w1052le" path="res://Assets/chest/Gold/Open(GoldLoot)10.png" id="12_mp46y"]
+[ext_resource type="Texture2D" uid="uid://55mk5nc5gq7h" path="res://Assets/chest/Gold/Open(GoldLoot)11.png" id="13_ogf44"]
+[ext_resource type="Texture2D" uid="uid://cghddfhmv3jme" path="res://Assets/chest/Gold/Open(GoldLoot)12.png" id="14_nxnog"]
+[ext_resource type="Texture2D" uid="uid://xlr5q5ingco8" path="res://Assets/chest/Gold/Open(GoldLoot)13.png" id="15_oyyf1"]
+[ext_resource type="Texture2D" uid="uid://b25t6eq040rv7" path="res://Assets/chest/Gold/Open(GoldLoot)14.png" id="16_d0fy5"]
+[ext_resource type="Texture2D" uid="uid://de0syenx131uw" path="res://Assets/chest/Gold/Open(GoldLoot)15.png" id="17_be3kg"]
+[ext_resource type="Texture2D" uid="uid://xl372dnij8sj" path="res://Assets/chest/Gold/Open(GoldLoot)16.png" id="18_8bbc5"]
+[ext_resource type="Script" uid="uid://km70pfc07nwr" path="res://Scene/interact_chest.gd" id="19_s30c5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fyepk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dm4f4")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_s30c5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_l6jrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_6qrrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_1e46p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7w21o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_r6m8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xjk1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qjrxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_rr0cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mp46y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ogf44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_nxnog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_oyyf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_d0fy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_be3kg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_8bbc5")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7i64"]
+size = Vector2(36, 15)
+
+[node name="Chest" type="Area2D"]
+script = ExtResource("19_s30c5")
+
+[node name="ChestAnim" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_fyepk")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, 8)
+shape = SubResource("RectangleShape2D_r7i64")
