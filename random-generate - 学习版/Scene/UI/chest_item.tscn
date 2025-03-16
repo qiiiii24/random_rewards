@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg43d2ning62t"]
+
+[ext_resource type="Script" uid="uid://7hi48r00lguk" path="res://Scene/UI/chest_item.gd" id="1_62cbb"]
+[ext_resource type="PackedScene" uid="uid://myvf1pwiba2p" path="res://Scene/UI/item_visual.tscn" id="1_jco02"]
+[ext_resource type="Resource" uid="uid://tmhwbi35q4eo" path="res://Item/gold_cup.tres" id="2_4hybe"]
+
+[node name="ChestItem" type="VBoxContainer"]
+custom_minimum_size = Vector2(90, 75)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -391.0
+offset_bottom = -196.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+script = ExtResource("1_62cbb")
+item = ExtResource("2_4hybe")
+
+[node name="ItemLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Gold Sword"
+horizontal_alignment = 1
+
+[node name="ItemContainer" type="CenterContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ItemVisual" parent="ItemContainer" instance=ExtResource("1_jco02")]
+layout_mode = 2

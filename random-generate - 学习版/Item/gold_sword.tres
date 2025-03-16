@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://ey0n61iit0mm"]
+
+[ext_resource type="Script" uid="uid://c5lipkh4axo22" path="res://custom_resource/item.gd" id="1_81v2m"]
+[ext_resource type="Texture2D" uid="uid://dgr8chr0a4qfa" path="res://Assets/item/weapons/gold_sword.tres" id="1_sstp2"]
+
+[resource]
+script = ExtResource("1_81v2m")
+icon = ExtResource("1_sstp2")
+name = "Gold Sword"
+rarity = 2
+metadata/_custom_type_script = "uid://c5lipkh4axo22"
